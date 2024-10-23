@@ -1,0 +1,448 @@
+fileFormatVersion: 2
+guid: cef3a8a39c214de42b210bcb59e491d0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fireball-removebg-preview_0
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 268
+        width: 104
+        height: 72
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c62043ceb2e73c418744b812762e5b5
+      internalID: 786853188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 291
+        width: 38
+        height: 27
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a837d19926c6ba41abc94a823062da8
+      internalID: 1427450951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_3
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 287
+        width: 72
+        height: 35
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fced0e5478ed66d48960121cf395bcc5
+      internalID: 1817376259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_6
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 285
+        width: 102
+        height: 39
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a26fd7085955814387894bda3f8d467
+      internalID: -26663208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_7
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 284
+        width: 149
+        height: 41
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696d2f07ec731fd4a843431684354d42
+      internalID: 1778533530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_19
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 47
+        width: 30
+        height: 156
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33dfcd3e54f89f408abe8eb8cfad3a6
+      internalID: 1402209597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_20
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 44
+        width: 29
+        height: 162
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f155ea70be03a47b2fba7d3a33c50b
+      internalID: 763951648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_23
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 44
+        width: 32
+        height: 153
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 615989cc633d5d548895434a46e7ac58
+      internalID: 536879076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_30
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 72
+        width: 89
+        height: 106
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07cfc1495fd1654bb59beca7d0128e9
+      internalID: 1910650351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_31
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 72
+        width: 60
+        height: 106
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54489f99d097ab4f8cff74bc4176716
+      internalID: 1121569007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_46
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 45
+        width: 29
+        height: 161
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d869f5f8ceeb894997a1143c5642246
+      internalID: 687356123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fireball-removebg-preview_55
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 45
+        width: 26
+        height: 161
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9db599030aa8104ba2e1ab8014c4c8c
+      internalID: 1378619851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      fireball-removebg-preview_0: 786853188
+      fireball-removebg-preview_1: -1634430546
+      fireball-removebg-preview_10: 2124737018
+      fireball-removebg-preview_11: 912529243
+      fireball-removebg-preview_12: 1901546570
+      fireball-removebg-preview_13: 1192816280
+      fireball-removebg-preview_14: 1509070910
+      fireball-removebg-preview_15: 442261121
+      fireball-removebg-preview_16: -515156887
+      fireball-removebg-preview_17: -624663429
+      fireball-removebg-preview_18: 844033780
+      fireball-removebg-preview_19: 1402209597
+      fireball-removebg-preview_2: 1427450951
+      fireball-removebg-preview_20: 763951648
+      fireball-removebg-preview_21: 297782650
+      fireball-removebg-preview_22: -653719162
+      fireball-removebg-preview_23: 536879076
+      fireball-removebg-preview_24: -1417779173
+      fireball-removebg-preview_25: -1619018697
+      fireball-removebg-preview_26: -111125768
+      fireball-removebg-preview_27: -641738922
+      fireball-removebg-preview_28: 322052721
+      fireball-removebg-preview_29: 789172245
+      fireball-removebg-preview_3: 1817376259
+      fireball-removebg-preview_30: 1910650351
+      fireball-removebg-preview_31: 1121569007
+      fireball-removebg-preview_32: 1578242513
+      fireball-removebg-preview_33: -1084083673
+      fireball-removebg-preview_34: 932232628
+      fireball-removebg-preview_35: -1985693689
+      fireball-removebg-preview_36: -1608009334
+      fireball-removebg-preview_37: 761846525
+      fireball-removebg-preview_38: -303369393
+      fireball-removebg-preview_39: 1744733728
+      fireball-removebg-preview_4: -1274519681
+      fireball-removebg-preview_40: -737914368
+      fireball-removebg-preview_41: -1374734763
+      fireball-removebg-preview_42: 996623772
+      fireball-removebg-preview_43: -924529105
+      fireball-removebg-preview_44: -1146585420
+      fireball-removebg-preview_45: 550829681
+      fireball-removebg-preview_46: 687356123
+      fireball-removebg-preview_47: 1802439191
+      fireball-removebg-preview_48: -821475853
+      fireball-removebg-preview_49: 854109404
+      fireball-removebg-preview_5: -1713340045
+      fireball-removebg-preview_50: -497395779
+      fireball-removebg-preview_51: -604318465
+      fireball-removebg-preview_52: -1244200498
+      fireball-removebg-preview_53: -472319467
+      fireball-removebg-preview_54: -1488095848
+      fireball-removebg-preview_55: 1378619851
+      fireball-removebg-preview_56: 1299374687
+      fireball-removebg-preview_57: -1115864596
+      fireball-removebg-preview_58: -793120802
+      fireball-removebg-preview_59: -1702960259
+      fireball-removebg-preview_6: -26663208
+      fireball-removebg-preview_60: -1463756274
+      fireball-removebg-preview_61: -1770289333
+      fireball-removebg-preview_62: -1616548107
+      fireball-removebg-preview_63: -1824369864
+      fireball-removebg-preview_64: 1768863810
+      fireball-removebg-preview_65: 1810245588
+      fireball-removebg-preview_66: -1719574879
+      fireball-removebg-preview_67: -1594089084
+      fireball-removebg-preview_68: 512094516
+      fireball-removebg-preview_69: -652354729
+      fireball-removebg-preview_7: 1778533530
+      fireball-removebg-preview_70: -1331109349
+      fireball-removebg-preview_71: 205994293
+      fireball-removebg-preview_72: 169020231
+      fireball-removebg-preview_73: 1215457225
+      fireball-removebg-preview_74: 1352499783
+      fireball-removebg-preview_75: -1542509698
+      fireball-removebg-preview_76: -1501120586
+      fireball-removebg-preview_77: -165972747
+      fireball-removebg-preview_78: 1938194472
+      fireball-removebg-preview_79: 1657455906
+      fireball-removebg-preview_8: 1299711504
+      fireball-removebg-preview_80: -1302190873
+      fireball-removebg-preview_81: -956210470
+      fireball-removebg-preview_9: -32748167
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
