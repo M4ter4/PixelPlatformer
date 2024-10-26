@@ -1,20 +1,21 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Basic;
 using UnityEngine;
 
-public class HealthCollectable : MonoBehaviour
+namespace Level
 {
-    [SerializeField] private float healAmount = 100f;
-    [SerializeField] private AudioClip healSound;
-    private void OnTriggerEnter2D(Collider2D other)
+    public class HealthCollectable : MonoBehaviour
     {
-        Health health = other.GetComponent<Health>();
-        if (health != null && health.NeedsHealing() && other.tag == "Player")
+        [SerializeField] private float healAmount = 100f;
+        [SerializeField] private AudioClip healSound;
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            health.Heal(healAmount);
-            gameObject.SetActive(false);
-            SoundManager.Instance.PlaySound(healSound);
+            Health health = other.GetComponent<Health>();
+            if (health != null && health.NeedsHealing() && other.CompareTag("Player"))
+            {
+                health.Heal(healAmount);
+                gameObject.SetActive(false);
+                SoundManager.Instance.PlaySound(healSound);
+            }
         }
     }
 }

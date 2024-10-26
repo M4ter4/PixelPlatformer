@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections;
+using Basic;
 using UnityEngine;
 
 public class FireTrap : MonoBehaviour

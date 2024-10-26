@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Basic;
 using UnityEngine;
 
 public class EnemyProjectile : Projectile

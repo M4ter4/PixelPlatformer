@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Basic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -109,9 +110,7 @@ public class MeleeEnemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
+        if (other.CompareTag("Player")) 
             other.gameObject.GetComponent<Health>().TakeDamage(damage);
-        }
     }
 }

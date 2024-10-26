@@ -1,29 +1,29 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour
+namespace Level
 {
-    [SerializeField] private Transform previousRoom;
-    [SerializeField] private Transform nextRoom;
-    [SerializeField] private CameraController cameraController;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    public class Door : MonoBehaviour
     {
-        if (other.tag == "Player")
+        [SerializeField] private Transform previousRoom;
+        [SerializeField] private Transform nextRoom;
+        [SerializeField] private CameraController cameraController;
+
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.transform.position.x < transform.position.x)
+            if (other.CompareTag("Player")) // Метод CompareTag более эффективен, чем прямое сравнение строки
             {
-                cameraController.Move(nextRoom.position);
-                nextRoom.GetComponent<RoomReset>().ActivateRoom(true);
-                previousRoom.GetComponent<RoomReset>().ActivateRoom(false);
-            }
-            else
-            {
-                cameraController.Move(previousRoom.position);
-                nextRoom.GetComponent<RoomReset>().ActivateRoom(false);
-                previousRoom.GetComponent<RoomReset>().ActivateRoom(true);
+                if (other.transform.position.x < transform.position.x)
+                {
+                    cameraController.Move(nextRoom.position);
+                    nextRoom.GetComponent<RoomReset>().ActivateRoom(true);
+                    previousRoom.GetComponent<RoomReset>().ActivateRoom(false);
+                }
+                else
+                {
+                    cameraController.Move(previousRoom.position);
+                    nextRoom.GetComponent<RoomReset>().ActivateRoom(false);
+                    previousRoom.GetComponent<RoomReset>().ActivateRoom(true);
+                }
             }
         }
     }

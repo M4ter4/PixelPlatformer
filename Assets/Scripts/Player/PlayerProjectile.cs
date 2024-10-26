@@ -1,26 +1,29 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
+using Basic;
 using UnityEngine;
 
-public class PlayerProjectile : Projectile
+namespace Player // Используй namespaces
 {
-    [SerializeField] private float damage;
-    private Animator _animator;
+    public class PlayerProjectile : Projectile
+    {
+        [SerializeField] private float damage;
+        private Animator _animator;
+    
+        private static readonly int Blast = Animator.StringToHash("Blast");
 
-    private new void Awake()
-    {
-        base.Awake();
-        _animator = GetComponent<Animator>();
-    }
-    private new void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!(other.tag == "Player" || other.tag == "Enemy" || other.tag == "Ground" || other.tag == "Door"))
-            return;
-        _collider.enabled = false;
-        _rigidbody.velocity = Vector2.zero;
-        _animator.SetTrigger("Blast");
-        if(other.tag == "Enemy")
-            other.GetComponent<Health>().TakeDamage(damage);
+        private new void Awake()
+        {
+            base.Awake();
+            _animator = GetComponent<Animator>();
+        }
+        private new void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.tag is not ("Player" or "Enemy" or "Ground" or "Door"))
+                return;
+            _collider.enabled = false;
+            _rigidbody.velocity = Vector2.zero;
+            _animator.SetTrigger(Blast);
+            if (other.tag == "Enemy")
+                other.GetComponent<Health>().TakeDamage(damage);
+        }
     }
 }

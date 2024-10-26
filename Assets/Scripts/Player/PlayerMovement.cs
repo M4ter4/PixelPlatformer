@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 
@@ -20,8 +19,12 @@ public class PlayerMovement : Movement
     [SerializeField] private int extraJumps;
     [SerializeField] private float wallJumpX;
     [SerializeField] private float wallJumpY;
+    private static readonly int HorizontalInput = Animator.StringToHash("HorizontalInput");
+    private static readonly int VerticalSpeed = Animator.StringToHash("VerticalSpeed");
+    private static readonly int Grounded = Animator.StringToHash("IsGrounded");
+    private static readonly int OnWall = Animator.StringToHash("IsOnWall");
 
-    void Start()
+    private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _scale = transform.localScale;
@@ -29,7 +32,7 @@ public class PlayerMovement : Movement
         _boxCollider2D = GetComponent<BoxCollider2D>();
     }
 
-    void Update()
+    private void Update() // Используй модификаторы доступа для методов, большие методы разделяй
     {
         _horizontalInput = Input.GetAxis("Horizontal");
         if (_rigidbody2D.velocity.x < 0f)
@@ -44,7 +47,8 @@ public class PlayerMovement : Movement
         if(Input.GetKeyUp(KeyCode.Space) && _rigidbody2D.velocity.y > 0f)
             _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, _rigidbody2D.velocity.y /2);
 
-        if (IsOnWall() && (Mathf.Abs(_horizontalInput) < 0.1f || Mathf.Approximately(Mathf.Sign(_horizontalInput), Mathf.Sign(transform.localScale.x))))
+        if (IsOnWall() && (Mathf.Abs(_horizontalInput) < 0.1f || Mathf.Approximately(Mathf.Sign(_horizontalInput),
+                Mathf.Sign(transform.localScale.x))))
         {
             _rigidbody2D.velocity = Vector2.zero;
             _rigidbody2D.gravityScale = 0f;
@@ -64,13 +68,13 @@ public class PlayerMovement : Movement
             }
         }
         
-        _animator.SetFloat("HorizontalInput", Mathf.Abs(_horizontalInput));
-        _animator.SetFloat("VerticalSpeed", _rigidbody2D.velocity.y);
-        _animator.SetBool("IsGrounded", IsGrounded());
-        _animator.SetBool("IsOnWall", IsOnWall());
+        _animator.SetFloat(HorizontalInput, Mathf.Abs(_horizontalInput));
+        _animator.SetFloat(VerticalSpeed, _rigidbody2D.velocity.y);
+        _animator.SetBool(Grounded, IsGrounded());
+        _animator.SetBool(OnWall, IsOnWall());
     }
 
-    private void Jump()
+    private void Jump() // Тоже разделить
     {
         if(_coyoteCounter <= 0 && !IsOnWall() && _jumpCounter <= 0)
             return;
@@ -81,15 +85,11 @@ public class PlayerMovement : Movement
         else
         {
             if (IsGrounded())
-            {
                 _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpVelocity);
-            }
             else
             {
                 if (_coyoteCounter > 0)
-                {
                     _rigidbody2D.velocity = new Vector2(_rigidbody2D.velocity.x, jumpVelocity);
-                }
                 else
                 {
                     if (_jumpCounter > 0)
@@ -104,25 +104,24 @@ public class PlayerMovement : Movement
         }
     }
 
-    private void WallJump()
-    {
+    private void WallJump() => 
         _rigidbody2D.AddForce(new Vector2(-Mathf.Sign(transform.localScale.x)*wallJumpX, wallJumpY), ForceMode2D.Force);
-    }
 
     private bool IsGrounded()
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f, Vector2.down, 0.02f, groundLayer);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, 
+            _boxCollider2D.bounds.size, 0f, Vector2.down, 0.02f, groundLayer);
         return raycastHit2D.collider;
     }
 
     private bool IsOnWall()
     {
-        RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, _boxCollider2D.bounds.size, 0f, new Vector2(transform.localScale.x, 0), 0.02f, groundLayer);
+        RaycastHit2D raycastHit2D = Physics2D.BoxCast(_boxCollider2D.bounds.center, 
+            _boxCollider2D.bounds.size, 0f, 
+            new Vector2(transform.localScale.x, 0), 0.02f, groundLayer);
         return raycastHit2D.collider;
     }
 
-    public bool CanAttack()
-    {
-        return Mathf.Abs(_rigidbody2D.velocity.x) < 0.01f && IsGrounded() && !IsOnWall();
-    }
+    public bool CanAttack() => 
+        Mathf.Abs(_rigidbody2D.velocity.x) < 0.01f && IsGrounded() && !IsOnWall();
 }
