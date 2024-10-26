@@ -104,7 +104,7 @@ public class MeleeEnemy : MonoBehaviour
 
     private void Death()
     {
-        transform.parent.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

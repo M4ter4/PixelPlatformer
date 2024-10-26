@@ -175,7 +175,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   options:
   - {fileID: 1007961207}
-  - {fileID: 0}
   - {fileID: 1021594664}
 --- !u!114 &636494757
 MonoBehaviour:
@@ -891,7 +890,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PIXEL RUN 3D
+  m_Text: 'PIXEL RUN '
 --- !u!222 &1324988651
 CanvasRenderer:
   m_ObjectHideFlags: 0

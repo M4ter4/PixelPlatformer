@@ -36,6 +36,7 @@ public class PlayerRespawn : MonoBehaviour
         transform.position = _currentCheckpoint.position;
         _health.Revive();
         Camera.main.GetComponent<CameraController>().Move(_currentCheckpoint.parent.position);
+        _currentCheckpoint.parent.gameObject.GetComponent<RoomReset>().ActivateRoom(true);
         _animator.ResetTrigger("Death");
         _animator.SetTrigger("Respawn");
     }

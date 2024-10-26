@@ -21,13 +21,21 @@ public class ArrowTrap : MonoBehaviour
         _projectiles[index].Shoot(firePoint, gameObject.transform.parent.rotation.eulerAngles.z + 90f);
     }
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
         _projectiles = new List<Projectile>();
         foreach (Transform projectile in projectileHolder.transform)
         {
             _projectiles.Add(projectile.gameObject.GetComponent<Projectile>());
+        }
+    }
+
+    private void OnEnable()
+    {
+        foreach (var arrow in _projectiles)
+        {
+            arrow.gameObject.SetActive(false);
         }
     }
 

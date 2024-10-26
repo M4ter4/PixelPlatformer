@@ -5,12 +5,18 @@ using UnityEngine;
 public class SelectionArrow : MonoBehaviour
 {
     [SerializeField] private RectTransform[] options;
+    private Button[] _components;
     private RectTransform _rectTransform;
     private int _currentOption;
 
     private void Start()
     {
         _rectTransform = GetComponent<RectTransform>();
+        _components = new Button[options.Length];
+        for (int i = 0; i < options.Length; i++)
+        {
+            _components[i] = options[i].GetComponent<Button>();
+        }
     }
 
     private void Update()
@@ -25,7 +31,7 @@ public class SelectionArrow : MonoBehaviour
 
     private void Interact()
     {
-        options[_currentOption].GetComponent<Button>().onClick.Invoke();
+        _components[_currentOption].onClick.Invoke();
     }
 
     private void ChangePosition(int change)
