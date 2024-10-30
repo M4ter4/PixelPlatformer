@@ -1,7 +1,7 @@
 using Basic;
 using UnityEngine;
 
-namespace Player // Используй namespaces
+namespace Player
 {
     public class PlayerProjectile : Projectile
     {
@@ -19,8 +19,8 @@ namespace Player // Используй namespaces
         {
             if (other.tag is not ("Player" or "Enemy" or "Ground" or "Door"))
                 return;
-            _collider.enabled = false;
-            _rigidbody.velocity = Vector2.zero;
+            Collider.enabled = false;
+            Rigidbody.velocity = Vector2.zero;
             _animator.SetTrigger(Blast);
             if (other.tag == "Enemy")
                 other.GetComponent<Health>().TakeDamage(damage);

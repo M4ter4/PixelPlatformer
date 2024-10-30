@@ -1,36 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
-public class HorizontalMovement : MonoBehaviour
+namespace Enemies
 {
-    [SerializeField] private float moveDistance;
-    [SerializeField] private float moveSpeed;
-    private float _leftBound;
-    private float _rightBound;
-    private bool _isMovingLeft;
+    public class HorizontalMovement : MonoBehaviour
+    {
+        [SerializeField] private float moveDistance;
+        [SerializeField] private float moveSpeed;
+        private float _leftBound;
+        private float _rightBound;
+        private bool _isMovingLeft;
     
-    private void Start()
-    {
-        _leftBound = transform.position.x - moveDistance;
-        _rightBound = transform.position.x + moveDistance;
-    }
-
-    private void Update()
-    {
-        if (_isMovingLeft)
+        private void Start()
         {
-            if (transform.position.x > _leftBound)
-                transform.position = new Vector3(transform.position.x - moveSpeed*Time.deltaTime, transform.position.y, transform.position.z);
-            else
-                _isMovingLeft = false;
+            _leftBound = transform.position.x - moveDistance;
+            _rightBound = transform.position.x + moveDistance;
         }
-        else
+
+        private void Update()
         {
-            if (transform.position.x < _rightBound)
-                transform.position = new Vector3(transform.position.x + moveSpeed*Time.deltaTime, transform.position.y, transform.position.z);
+            if (_isMovingLeft)
+            {
+                if (transform.position.x > _leftBound)
+                    transform.position = new Vector3(transform.position.x - moveSpeed*Time.deltaTime, transform.position.y, transform.position.z);
+                else
+                    _isMovingLeft = false;
+            }
             else
-                _isMovingLeft = true;
+            {
+                if (transform.position.x < _rightBound)
+                    transform.position = new Vector3(transform.position.x + moveSpeed*Time.deltaTime, transform.position.y, transform.position.z);
+                else
+                    _isMovingLeft = true;
+            }
         }
     }
 }
