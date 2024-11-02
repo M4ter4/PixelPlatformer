@@ -11,7 +11,6 @@ namespace Basic
         protected BoxCollider2D Collider;
         protected float Lifetime;
     
-    
         protected void Awake()
         {
             Rigidbody = GetComponent<Rigidbody2D>();
@@ -25,9 +24,7 @@ namespace Basic
                 Deactivate();
         }
 
-        // Update is called once per frame
-
-        public void Shoot(Transform shootPoint, float angle)
+        public virtual void Shoot(Transform shootPoint, float angle)
         {
             gameObject.SetActive(true);
             Collider.enabled = true;
@@ -41,7 +38,7 @@ namespace Basic
 
         protected void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.tag is "Player" or "Enemy" or "Ground" or "Door") 
+            if (other.tag is "Player" or "Enemy" or "Ground" or "Door" or "Trap") 
                 Deactivate();
         }
 

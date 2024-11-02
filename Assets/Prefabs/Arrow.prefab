@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7303234958306621613}
   - component: {fileID: 3543800128500399845}
   - component: {fileID: 1952006849065196580}
-  - component: {fileID: 5890314618413486757}
   - component: {fileID: 3235803296270056027}
   - component: {fileID: 1216654644065174256}
+  - component: {fileID: 2227811597778272105}
   m_Layer: 11
   m_Name: Arrow
   m_TagString: Projectile
@@ -100,20 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69a3a185148f5642be9ff7076920ef4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagsToDamage:
+  - Player
   damage: 3
---- !u!114 &5890314618413486757
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 739816075909045509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90d26094ab00ddb4db9ffb4312249ee2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  projectileSpeed: 5
 --- !u!61 &3235803296270056027
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -186,3 +175,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2227811597778272105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 739816075909045509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf728f37b974684bbca1f4cfadddcb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 5
