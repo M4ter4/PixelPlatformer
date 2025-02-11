@@ -8,11 +8,12 @@ namespace Basic
     {
         [Header("Health")]
         [SerializeField] private float maxHealth;
+        [SerializeField] private bool needsToBeStopped;
         private float _health;
         private Animator _animator;
         private bool _isDead;
         private Rigidbody2D _rigidbody2D;
-        private Movement _movement;
+        private EntityController _controller;
     
         [Header("Invulnerability")]
         [SerializeField] private bool needInvulnerability;
@@ -38,7 +39,7 @@ namespace Basic
             _animator = GetComponent<Animator>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
-            _movement = GetComponent<Movement>();
+            _controller = GetComponent<EntityController>();
         }
 
         public void TakeDamage(float damage)
@@ -49,6 +50,8 @@ namespace Basic
             if (_health > 0)
             {
                 _animator.SetTrigger(Hit);
+                if(needsToBeStopped)
+                    _controller.enabled = false;
                 if(needInvulnerability)
                     StartCoroutine(Invulnerability());
             }
@@ -57,7 +60,7 @@ namespace Basic
                 SoundManager.Instance.PlaySound(deathSound);
                 _rigidbody2D.velocity = Vector2.zero;
                 _isDead = true;
-                _movement.enabled = false;
+                _controller.enabled = false;
                 _animator.SetFloat(HorizontalInput, 0f);
                 _animator.SetFloat(VerticalSpeed, 0f);
                 _animator.SetBool(IsGrounded, false);
@@ -95,7 +98,13 @@ namespace Basic
         {
             _isDead = false;
             _health = maxHealth;
-            _movement.enabled = true;
+            _controller.enabled = true;
         }
+
+        public void ExitMovementStop() =>
+            _controller.enabled = true;
+        
+        public void Disable() =>
+            gameObject.SetActive(false);
     }
 }

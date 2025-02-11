@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections;
+using UnityEngine;
+
+namespace Enemies.MeleeEnemy.States
+{
+    public class GlancingState : MeleeEnemyState
+    {
+        private Coroutine _glancingCoroutine;
+
+        public override void Enter()
+        {
+            if (_glancingCoroutine is not null)
+                StopCoroutine(_glancingCoroutine);
+            _glancingCoroutine = StartCoroutine(Glance());
+        }
+
+        public override void Action() {}
+
+        private IEnumerator Glance()
+        {
+            transform.localScale = new Vector3((transform.localScale.x) * (-1f), transform.localScale.y,
+                transform.localScale.z);
+            yield return new WaitForSeconds(1f);
+            transform.localScale = new Vector3((transform.localScale.x) * (-1f), transform.localScale.y,
+                transform.localScale.z);
+            yield return new WaitForSeconds(1f);
+            Controller.ChangeState(MeleeEnemyStates.Patroling);
+        }
+
+        public override void Exit()
+        {
+            StopCoroutine(_glancingCoroutine);
+            _glancingCoroutine = null;
+        }
+    }
+}

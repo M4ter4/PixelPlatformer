@@ -1,23 +1,24 @@
 using System.Collections.Generic;
 using Basic;
+using Basic.Attack;
 using UI;
 using UnityEngine;
 
 namespace Player
 {
-    public class PlayerAttack : MonoBehaviour
+    public class PlayerAttack : Attacker
     {
-        private PlayerMovement _playerMovement;
-        private float _attackTimer = Mathf.Infinity;
-        private List<Projectile> _projectiles;
         [SerializeField] private float attackCooldown;
         [SerializeField] private Transform firePoint;
         [SerializeField] private GameObject fireballHolder;
         [SerializeField] private AudioClip fireballSound;
+
+        private float _attackTimer;
+        private List<Projectile> _projectiles;
+        private int _projectileIndex;
     
         private void Start()
         {
-            _playerMovement = GetComponent<PlayerMovement>();
             _projectiles = new List<Projectile>();
             foreach (Transform projectile in fireballHolder.transform)
                 _projectiles.Add(projectile.gameObject.GetComponent<Projectile>());
@@ -25,21 +26,38 @@ namespace Player
 
         private void Update()
         {
-            int projectileIndex =  GetFireballIndex();
-            if (Input.GetMouseButton(0) &&
-                _attackTimer >= attackCooldown && _playerMovement.CanAttack() && projectileIndex != -1)
-            {
-                Attack(projectileIndex);
-                _attackTimer = 0;
-            }
-            else
-                _attackTimer += Time.deltaTime;
+            if (_attackTimer >= 0)
+                _attackTimer -= Time.deltaTime;
+            
+            // int projectileIndex =  GetFireballIndex();
+            // if (Input.GetMouseButton(0) &&
+            //     _attackTimer >= attackCooldown && _playerMovement.CanAttack() && projectileIndex != -1)
+            // {
+            //     Attack();
+            //     _attackTimer = 0;
+            // }
+            // else
+            //     _attackTimer += Time.deltaTime;
         }
 
-        private void Attack(int index)
+        private bool CanAttack()
         {
-            _projectiles[index].Shoot(firePoint, (gameObject.transform.localScale.x > 0) ? 0f : 180f);
-            SoundManager.Instance.PlaySound(fireballSound);
+            _projectileIndex = GetFireballIndex();
+            if (_attackTimer <= 0 && _projectileIndex != -1)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public override void Attack()
+        {
+            if (CanAttack())
+            {
+                _projectiles[_projectileIndex].Shoot(firePoint, (gameObject.transform.localScale.x > 0) ? 0f : 180f);
+                SoundManager.Instance.PlaySound(fireballSound);
+                _attackTimer = attackCooldown;
+            }
         }
 
         private int GetFireballIndex()

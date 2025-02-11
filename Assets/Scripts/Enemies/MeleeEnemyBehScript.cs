@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Enemies
 {
-    public class MeleeEnemy : MonoBehaviour
+    public class MeleeEnemyBehScript : MonoBehaviour
     {
         [SerializeField] private float attackCooldown;
         [SerializeField] private float damage;
