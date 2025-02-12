@@ -7,12 +7,14 @@ namespace Enemies.MeleeEnemy.States
     public class GlancingState : MeleeEnemyState
     {
         private Coroutine _glancingCoroutine;
+        public static readonly int IdleAnimation = Animator.StringToHash("Idle");
 
         public override void Enter()
         {
             if (_glancingCoroutine is not null)
                 StopCoroutine(_glancingCoroutine);
             _glancingCoroutine = StartCoroutine(Glance());
+            Animator.SetTrigger(IdleAnimation);
         }
 
         public override void Action() {}

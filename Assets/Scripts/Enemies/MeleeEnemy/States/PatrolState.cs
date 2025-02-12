@@ -7,10 +7,12 @@ namespace Enemies.MeleeEnemy.States
     public class PatrolState : MeleeEnemyState
     {
         [SerializeField] protected PointMovement pointMovement;
+        public static readonly int MovingAnimation = Animator.StringToHash("Moving");
         
         public override void Enter()
         {
             pointMovement.enabled = true;
+            Animator.SetTrigger(MovingAnimation);
         }
         
         public override void Action(){}

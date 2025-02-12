@@ -6,7 +6,7 @@ namespace Enemies.MeleeEnemy.States
     {
         [SerializeField] private GameObject swordTrigger;
         
-        public static readonly int AttackAnimation = UnityEngine.Animator.StringToHash("MeleeAttack");
+        public static readonly int AttackAnimation = Animator.StringToHash("MeleeAttack");
         public override void Enter()
         {
             observeTriggerHandler.gameObject.SetActive(false);

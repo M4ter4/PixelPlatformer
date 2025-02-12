@@ -5,8 +5,12 @@ namespace Enemies.MeleeEnemy.States
     public class FollowingState : MeleeEnemyState
     {
         [SerializeField] private float speed;
-        
-        public override void Enter(){}
+        public static readonly int MovingAnimation = Animator.StringToHash("Moving");
+
+        public override void Enter()
+        {
+            Animator.SetTrigger(MovingAnimation);
+        }
 
         public override void Action()
         {
