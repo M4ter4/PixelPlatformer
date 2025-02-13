@@ -32,6 +32,7 @@ namespace Basic
         private static readonly int IsGrounded = Animator.StringToHash("IsGrounded");
         private static readonly int IsOnWall = Animator.StringToHash("IsOnWall");
         private static readonly int Death = Animator.StringToHash("Death");
+        private static readonly int IsDead = Animator.StringToHash("IsDead");
 
         private void Awake()
         {
@@ -66,6 +67,7 @@ namespace Basic
                 _animator.SetBool(IsGrounded, false);
                 _animator.SetBool(IsOnWall, false);
                 _animator.SetTrigger(Death);
+                _animator.SetBool(IsDead, true);
             }
             
             if(!_isDead)
@@ -99,6 +101,7 @@ namespace Basic
             _isDead = false;
             _health = maxHealth;
             _controller.enabled = true;
+            _animator.SetBool(IsDead, false);
         }
 
         public void ExitMovementStop() =>
