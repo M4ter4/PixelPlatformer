@@ -12,9 +12,14 @@ namespace Enemies.MeleeEnemy
         [SerializeField] private PatrolState patrolState;
         [SerializeField] private FollowingState followingState;
         [SerializeField] private AttackState attackState;
+        
+        [Header("Triggers")]
+        [SerializeField] protected GameObject observeTriggerHandler;
+        [SerializeField] protected GameObject canAttackTriggerHandler;
+        [SerializeField] private GameObject swordTrigger;
 
         private MeleeEnemyState _currentState;
-        [SerializeField]private MeleeEnemyStates _currentStateEnum;
+        private MeleeEnemyStates _currentStateEnum;
         private Dictionary<MeleeEnemyStates, MeleeEnemyState> _statesDictionary;
         
         public Transform LastSeenPlayer { get; set; }
@@ -36,15 +41,14 @@ namespace Enemies.MeleeEnemy
             _currentStateEnum = MeleeEnemyStates.Glancing;
         }
 
-        // private void Start() =>
-        //     ChangeState(MeleeEnemyStates.Glancing);
-
         private void OnEnable()
         {
-            //ChangeState(MeleeEnemyStates.Glancing);
+            swordTrigger.SetActive(false);
+            observeTriggerHandler.SetActive(true);
+            canAttackTriggerHandler.SetActive(true);
             _currentState.Enter();
         }
-        //
+       
         private void OnDisable() =>
             _currentState.Exit();
 

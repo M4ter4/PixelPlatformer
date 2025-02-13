@@ -10,13 +10,7 @@ namespace Enemies.MeleeEnemy.States
         
         protected MeleeEnemyController Controller;
         protected Animator Animator;
-
-        // protected MeleeEnemyState(MeleeEnemyController controller)
-        // {
-        //     Controller = controller;
-        //     enabled = false;
-        // }
-
+        
         protected virtual void Awake()
         {
             Controller = GetComponent<MeleeEnemyController>();

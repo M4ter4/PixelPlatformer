@@ -7667,6 +7667,7 @@ GameObject:
   - component: {fileID: 8650480361608811760}
   - component: {fileID: 8650480361608811762}
   - component: {fileID: 8650480361608811763}
+  - component: {fileID: 8650480361608811764}
   m_Layer: 10
   m_Name: Body
   m_TagString: Player
@@ -9423,6 +9424,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1444109048}
     - target: {fileID: 3421308295807570021, guid: 2c4c7e956bd8d2b4290a00034a83c882, type: 3}
+      propertyPath: swordTrigger
+      value: 
+      objectReference: {fileID: 1311215665}
+    - target: {fileID: 3421308295807570021, guid: 2c4c7e956bd8d2b4290a00034a83c882, type: 3}
       propertyPath: glancingState
       value: 
       objectReference: {fileID: 1444109046}
@@ -9430,6 +9435,14 @@ PrefabInstance:
       propertyPath: followingState
       value: 
       objectReference: {fileID: 1444109057}
+    - target: {fileID: 3421308295807570021, guid: 2c4c7e956bd8d2b4290a00034a83c882, type: 3}
+      propertyPath: observeTriggerHandler
+      value: 
+      objectReference: {fileID: 1271214738}
+    - target: {fileID: 3421308295807570021, guid: 2c4c7e956bd8d2b4290a00034a83c882, type: 3}
+      propertyPath: canAttackTriggerHandler
+      value: 
+      objectReference: {fileID: 1635251624}
     - target: {fileID: 5160576769653623830, guid: 2c4c7e956bd8d2b4290a00034a83c882, type: 3}
       propertyPath: leftEdge
       value: 
@@ -9923,6 +9936,18 @@ MonoBehaviour:
   firePoint: {fileID: 2535454897866428287}
   fireballHolder: {fileID: 3132241623109545350}
   fireballSound: {fileID: 0}
+--- !u!114 &8650480361608811764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992203380869606217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8d42ae8cf864672bad3a93096947aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &8675360937619876627
 Rigidbody2D:
   serializedVersion: 4
