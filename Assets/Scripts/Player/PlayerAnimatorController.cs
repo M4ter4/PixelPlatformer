@@ -26,7 +26,7 @@ namespace Player
 
         private void Update()
         {
-            _animator.SetFloat(HorizontalInput, Input.GetAxis("Horizontal"));
+            _animator.SetFloat(HorizontalInput, Mathf.Abs(Input.GetAxis("Horizontal")));
             _animator.SetFloat(VerticalSpeed, _rigidbody.velocity.y);
             _animator.SetBool(IsGrounded, _surfaceControl.IsGrounded());
             _animator.SetBool(IsOnWall, _surfaceControl.IsOnWall());
