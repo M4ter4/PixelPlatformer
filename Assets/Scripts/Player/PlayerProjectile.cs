@@ -1,12 +1,14 @@
+using System.Collections;
 using Basic;
 using UnityEngine;
 
-namespace Player // Используй namespaces
+namespace Player
 {
+    [RequireComponent(typeof(ContactDamageEnabling))]
     public class PlayerProjectile : Projectile
     {
-        [SerializeField] private float damage;
         private Animator _animator;
+        private ContactDamageEnabling _contactDamageEnabling;
     
         private static readonly int Blast = Animator.StringToHash("Blast");
 
@@ -14,16 +16,23 @@ namespace Player // Используй namespaces
         {
             base.Awake();
             _animator = GetComponent<Animator>();
+            _contactDamageEnabling = GetComponent<ContactDamageEnabling>();
         }
+
+        public override void Shoot(Transform shootPoint, float angle)
+        {
+            base.Shoot(shootPoint, angle);
+            _contactDamageEnabling.IsEnabled = true;
+        }
+
         private new void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag is not ("Player" or "Enemy" or "Ground" or "Door"))
                 return;
-            _collider.enabled = false;
-            _rigidbody.velocity = Vector2.zero;
+            Collider.enabled = false;
+            Rigidbody.velocity = Vector2.zero;
             _animator.SetTrigger(Blast);
-            if (other.tag == "Enemy")
-                other.GetComponent<Health>().TakeDamage(damage);
+            _contactDamageEnabling.enabled = false;
         }
     }
 }

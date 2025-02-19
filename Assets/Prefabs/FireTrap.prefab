@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3417869329166285311}
   - component: {fileID: 2787452376923525168}
   - component: {fileID: 5214150834248174907}
+  - component: {fileID: 7056012033867531669}
   - component: {fileID: 500899396263216230}
   m_Layer: 11
   m_Name: FireTrap
@@ -144,10 +145,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9264bc51df1c8847b6771bf276a5cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
   activationDelay: 0.2
   activeTime: 2
   activationSound: {fileID: 8300000, guid: 838b28991c18ee84daafa2d5b0c30714, type: 3}
+--- !u!114 &7056012033867531669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803922393527307823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a8c5a2e237453db6cc4a4407296d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagsToDamage:
+  - Player
+  damage: 1
 --- !u!95 &500899396263216230
 Animator:
   serializedVersion: 5

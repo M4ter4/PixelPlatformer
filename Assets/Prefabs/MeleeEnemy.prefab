@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 7977063422923987679}
   - component: {fileID: 5675398399637883519}
   - component: {fileID: 3314814060270436718}
-  - component: {fileID: 7561723359505593159}
   - component: {fileID: 743579558437565229}
   - component: {fileID: 372003916470703576}
   - component: {fileID: 6291848206353339271}
   - component: {fileID: 7044320572018530633}
+  - component: {fileID: 3421308295807570021}
+  - component: {fileID: 6757582858412048066}
   m_Layer: 11
   m_Name: MeleeEnemy
   m_TagString: Enemy
@@ -111,25 +112,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7561723359505593159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211334391484994338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 289daccd1fdb1364aa22d60a48bfb914, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackCooldown: 1
-  damage: 1
-  sightRange: 10
-  playerLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  attackSound: {fileID: 8300000, guid: 67ca7ad184c3f9b449143635b91e0bca, type: 3}
 --- !u!114 &743579558437565229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,3 +247,28 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.30107677, y: 0.17747599}
   m_EdgeRadius: 0
+--- !u!114 &3421308295807570021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211334391484994338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdaa05fd02c9be14c9cff96d5aa73030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glancingState: {fileID: 0}
+--- !u!114 &6757582858412048066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211334391484994338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2168f79c174b4d8593ae58072e7c15aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

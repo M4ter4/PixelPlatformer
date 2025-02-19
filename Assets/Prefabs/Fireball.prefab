@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8826610942393738041}
   - component: {fileID: -3841458042967408831}
+  - component: {fileID: 5666180586864471691}
   - component: {fileID: 6221756862881682110}
   - component: {fileID: 745783515077430323}
   - component: {fileID: 4733809887347018025}
@@ -49,6 +50,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 6
+  damage: 2
+--- !u!114 &5666180586864471691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9028985289094863910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a8c5a2e237453db6cc4a4407296d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagsToDamage:
+  - Enemy
   damage: 2
 --- !u!212 &6221756862881682110
 SpriteRenderer:
