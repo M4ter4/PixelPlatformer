@@ -48,7 +48,7 @@ namespace Player
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Checkpoint"))
+            if (other.CompareTag("Respawn"))
             {
                 _currentCheckpoint = other.transform;
                 other.GetComponent<Animator>().SetTrigger("Activate");
