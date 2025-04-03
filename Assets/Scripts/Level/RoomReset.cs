@@ -10,9 +10,12 @@ namespace Level
         [SerializeField] private GameObject trapHolder;
         private List<GameObject> _traps;
         private Vector3[] _spawnPointsTraps;
+        
         [SerializeField] private GameObject enemyHolder;
         private List<GameObject> _enemies;
         private Vector3[] _spawnPointsEnemies;
+
+        public Vector3 RoomCenterPosition;
 
         private void Start()
         {

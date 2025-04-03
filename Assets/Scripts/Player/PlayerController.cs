@@ -34,6 +34,9 @@ namespace Player
             _playerAttack = GetComponent<PlayerAttack>();
         }
 
+        private void OnDisable() =>
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
         private void Update()
         {
             float horizontal = Input.GetAxis("Horizontal");

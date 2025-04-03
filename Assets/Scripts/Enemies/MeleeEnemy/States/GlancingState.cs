@@ -10,6 +10,8 @@ namespace Enemies.MeleeEnemy.States
 
         public override void Enter()
         {
+            observeTriggerHandler.SetActive(true);
+            canAttackTriggerHandler.SetActive(true);
             if (_glancingCoroutine is not null)
                 StopCoroutine(_glancingCoroutine);
             _glancingCoroutine = StartCoroutine(Glance());
