@@ -7,21 +7,19 @@ namespace Enemies.MeleeEnemy
 {
     public class MeleeEnemyController : EntityController
     {
-        [Header("States")] 
-        [SerializeField] private GlancingState glancingState;
+        [Header("States")] [SerializeField] private GlancingState glancingState;
         [SerializeField] private PatrolState patrolState;
         [SerializeField] private FollowingState followingState;
         [SerializeField] private AttackState attackState;
-        
-        [Header("Triggers")]
-        [SerializeField] protected GameObject observeTriggerHandler;
-        [SerializeField] protected GameObject canAttackTriggerHandler;
+
+        [Header("Triggers")] [SerializeField] protected TriggerHandler observeTriggerHandler;
+        [SerializeField] protected TriggerHandler canAttackTriggerHandler;
         [SerializeField] private GameObject swordTrigger;
 
-        private MeleeEnemyState _currentState;
+        [SerializeField] private MeleeEnemyState _currentState;
         private MeleeEnemyStates _currentStateEnum;
         private Dictionary<MeleeEnemyStates, MeleeEnemyState> _statesDictionary;
-        
+
         public Transform LastSeenPlayer { get; set; }
 
         void Awake()
@@ -33,10 +31,26 @@ namespace Enemies.MeleeEnemy
                 { MeleeEnemyStates.Following, followingState },
                 { MeleeEnemyStates.Attacking, attackState }
             };
-            
+            observeTriggerHandler.AddListener((other) =>
+            {
+                if (other.CompareTag("Player"))
+                {
+                    LastSeenPlayer = other.transform;
+                    ChangeState(MeleeEnemyStates.Following);
+                }
+            });
+            canAttackTriggerHandler.AddListener(other =>
+            {
+                if (other.CompareTag("Player"))
+                    ChangeState(MeleeEnemyStates.Attacking);
+            });
             foreach (var state in _statesDictionary.Values)
+            {
+                state.Init();
                 state.enabled = false;
-            
+            }
+
+
             _currentState = glancingState;
             _currentStateEnum = MeleeEnemyStates.Glancing;
         }
@@ -44,20 +58,20 @@ namespace Enemies.MeleeEnemy
         private void OnEnable()
         {
             swordTrigger.SetActive(false);
-            observeTriggerHandler.SetActive(true);
-            canAttackTriggerHandler.SetActive(true);
             _currentState.Enter();
         }
-       
+
+
         private void OnDisable() =>
             _currentState.Exit();
+
 
         private void Update() =>
             _currentState.Action();
 
         public void ChangeState(MeleeEnemyStates newEnemyState)
         {
-            if(_currentStateEnum == newEnemyState)
+            if (_currentStateEnum == newEnemyState)
                 return;
             _currentState.Exit();
             _currentStateEnum = newEnemyState;

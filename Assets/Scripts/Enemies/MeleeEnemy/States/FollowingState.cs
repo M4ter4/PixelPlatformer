@@ -9,6 +9,8 @@ namespace Enemies.MeleeEnemy.States
 
         public override void Enter()
         {
+            observeTriggerHandler.SetActive(true);
+            canAttackTriggerHandler.SetActive(true);
             Animator.SetTrigger(MovingAnimation);
         }
 

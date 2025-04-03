@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Levels/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 8f2850b5f49dd3b468e0873ddd65340b
   - enabled: 1
-    path: Assets/Levels/Level1.unity
+    path: Assets/Scenes/BasicControl.unity
+    guid: cc6f424551ac41c4f90261aad6d90a70
+  - enabled: 1
+    path: Assets/Scenes/BasicTraps.unity
+    guid: 4f68eb9882be14f4c9d221e72f5d52cc
+  - enabled: 1
+    path: Assets/Scenes/BasicEnemies.unity
+    guid: 06011482c8b1c564696faff1b7eb1c54
+  - enabled: 0
+    path: Assets/Scenes/Level1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}

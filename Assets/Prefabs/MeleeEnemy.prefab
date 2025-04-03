@@ -14,19 +14,19 @@ GameObject:
   - component: {fileID: 743579558437565229}
   - component: {fileID: 372003916470703576}
   - component: {fileID: 6291848206353339271}
-  - component: {fileID: 3421308295807570021}
   - component: {fileID: 6757582858412048066}
   - component: {fileID: 9021031204665854704}
   - component: {fileID: 6422218779270542487}
   - component: {fileID: 7216713864949950584}
   - component: {fileID: 7417091991521127000}
+  - component: {fileID: 3421308295807570021}
   m_Layer: 11
   m_Name: MeleeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7977063422923987679
 Transform:
   m_ObjectHideFlags: 0
@@ -209,25 +209,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &3421308295807570021
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 211334391484994338}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdaa05fd02c9be14c9cff96d5aa73030, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  glancingState: {fileID: 6757582858412048066}
-  patrolState: {fileID: 9021031204665854704}
-  followingState: {fileID: 7216713864949950584}
-  attackState: {fileID: 7417091991521127000}
-  observeTriggerHandler: {fileID: 4480872884435702832}
-  canAttackTriggerHandler: {fileID: 8163189489761030065}
-  swordTrigger: {fileID: 2962755908042316170}
 --- !u!114 &6757582858412048066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,8 +221,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2168f79c174b4d8593ae58072e7c15aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  observeTriggerHandler: {fileID: 9040471466846659751}
-  canAttackTriggerHandler: {fileID: 7580103340321037647}
+  observeTriggerHandler: {fileID: 4480872884435702832}
+  canAttackTriggerHandler: {fileID: 8163189489761030065}
 --- !u!114 &9021031204665854704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,8 +235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e69067faa874bddbe9b0f7ebe624cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  observeTriggerHandler: {fileID: 9040471466846659751}
-  canAttackTriggerHandler: {fileID: 7580103340321037647}
+  observeTriggerHandler: {fileID: 4480872884435702832}
+  canAttackTriggerHandler: {fileID: 8163189489761030065}
   pointMovement: {fileID: 6422218779270542487}
 --- !u!114 &6422218779270542487
 MonoBehaviour:
@@ -300,8 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1510b69bd1324067afa36df2dce27b7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  observeTriggerHandler: {fileID: 9040471466846659751}
-  canAttackTriggerHandler: {fileID: 7580103340321037647}
+  observeTriggerHandler: {fileID: 4480872884435702832}
+  canAttackTriggerHandler: {fileID: 8163189489761030065}
   speed: 2.5
 --- !u!114 &7417091991521127000
 MonoBehaviour:
@@ -315,9 +296,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b755ea0246f47a0bfa68f28f9f89bdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  observeTriggerHandler: {fileID: 4480872884435702832}
+  canAttackTriggerHandler: {fileID: 8163189489761030065}
+  swordTrigger: {fileID: 2962755908042316170}
+--- !u!114 &3421308295807570021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211334391484994338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdaa05fd02c9be14c9cff96d5aa73030, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  glancingState: {fileID: 6757582858412048066}
+  patrolState: {fileID: 9021031204665854704}
+  followingState: {fileID: 7216713864949950584}
+  attackState: {fileID: 7417091991521127000}
   observeTriggerHandler: {fileID: 9040471466846659751}
   canAttackTriggerHandler: {fileID: 7580103340321037647}
   swordTrigger: {fileID: 2962755908042316170}
+  _currentState: {fileID: 0}
 --- !u!1 &2962755908042316170
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +453,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4480872884435702832}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -477,9 +478,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.15876171}
+  m_Offset: {x: 0, y: 0.15}
   serializedVersion: 2
-  m_Radius: 0.65876204
+  m_Radius: 0.4
 --- !u!60 &7746957541604848412
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -524,11 +525,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 2.045443, y: 1.7458115}
-      - {x: 1.0722334, y: 2.1107798}
-      - {x: 0.05877805, y: 0.2947598}
-      - {x: 1.8209587, y: 0.018021366}
-      - {x: 2.390989, y: 0.80376333}
+    - - {x: 1.3538651, y: 1.2012622}
+      - {x: 0.9252055, y: 1.4028659}
+      - {x: 0.0152142085, y: 0.33832383}
+      - {x: 1.1348262, y: 0.061585292}
+      - {x: 1.5959469, y: 0.5750525}
   m_UseDelaunayMesh: 0
 --- !u!114 &9040471466846659751
 MonoBehaviour:

@@ -15,18 +15,14 @@ namespace Enemies
         private bool _isAttacking;
         private float _checkTimer;
         private Vector3[] _directions = new Vector3[4];
-        // Start is called before the first frame update
-        void Start()
-        {
+
+        void Start() =>
             SetDirections();
-        }
 
-        private void OnEnable()
-        {
+        private void OnEnable() =>
             Stop();
-        }
+        
 
-        // Update is called once per frame
         void Update()
         {
             if(_isAttacking)

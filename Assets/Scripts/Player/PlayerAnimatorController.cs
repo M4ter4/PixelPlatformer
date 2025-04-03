@@ -31,5 +31,13 @@ namespace Player
             _animator.SetBool(IsGrounded, _surfaceControl.IsGrounded());
             _animator.SetBool(IsOnWall, _surfaceControl.IsOnWall());
         }
+
+        private void OnDisable()
+        {
+            _animator.SetFloat(HorizontalInput, 0);
+            _animator.SetFloat(VerticalSpeed, 0);
+            _animator.SetBool(IsGrounded, false);
+            _animator.SetBool(IsOnWall, false);
+        }
     }
 }

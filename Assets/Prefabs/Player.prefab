@@ -1314,7 +1314,6 @@ GameObject:
   - component: {fileID: 256731540238474685}
   - component: {fileID: 4698494166919429257}
   - component: {fileID: 1573672032516229394}
-  - component: {fileID: 6481464859768338480}
   - component: {fileID: 4408267896547991205}
   - component: {fileID: 1113139077036599665}
   - component: {fileID: 2281028377660933918}
@@ -1324,6 +1323,7 @@ GameObject:
   - component: {fileID: 6274930040679414301}
   - component: {fileID: 4068398580551791309}
   - component: {fileID: 6460723338608811999}
+  - component: {fileID: 2259542611217422400}
   m_Layer: 10
   m_Name: Body
   m_TagString: Player
@@ -1492,25 +1492,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6481464859768338480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4566625786708642874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 240d22c09f3c6ac43b335bba89a8510d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  needsToBeStopped: 0
-  needInvulnerability: 1
-  invulnerabilityTime: 0.4
-  flashTime: 0.1
-  hurtSound: {fileID: 8300000, guid: 69b08cf4367198c498d9f73dd984f1e2, type: 3}
-  deathSound: {fileID: 8300000, guid: 333ed46a6cb81684f96410ebd2d0e8ad, type: 3}
 --- !u!114 &4408267896547991205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,7 +1504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde04b24fc0b113428ef5d47436e4d48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: {fileID: 6481464859768338480}
+  playerHealth: {fileID: 2259542611217422400}
   actualHealthBar: {fileID: 0}
 --- !u!114 &1113139077036599665
 MonoBehaviour:
@@ -1537,7 +1518,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ebef727eb86f8408a182a526b42def, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startCheckpoint: {fileID: 0}
   maxLives: 3
   livesText: {fileID: 0}
 --- !u!114 &2281028377660933918
@@ -1634,7 +1614,7 @@ MonoBehaviour:
   attackCooldown: 1
   firePoint: {fileID: 3829385754496328466}
   fireballHolder: {fileID: 396679009829869346}
-  fireballSound: {fileID: 0}
+  fireballSound: {fileID: 8300000, guid: e1b9dd6ba06f69449ade84d7d1c77908, type: 3}
 --- !u!114 &6460723338608811999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1647,6 +1627,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d42ae8cf864672bad3a93096947aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2259542611217422400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4566625786708642874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 213af07a537a4d40bc125f613c2bfae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  needsToBeStopped: 0
+  needInvulnerability: 1
+  invulnerabilityTime: 0.4
+  flashTime: 0.1
+  hurtSound: {fileID: 8300000, guid: 69b08cf4367198c498d9f73dd984f1e2, type: 3}
+  deathSound: {fileID: 8300000, guid: 333ed46a6cb81684f96410ebd2d0e8ad, type: 3}
 --- !u!1 &6011211092210455600
 GameObject:
   m_ObjectHideFlags: 0

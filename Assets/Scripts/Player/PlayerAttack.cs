@@ -28,16 +28,6 @@ namespace Player
         {
             if (_attackTimer >= 0)
                 _attackTimer -= Time.deltaTime;
-            
-            // int projectileIndex =  GetFireballIndex();
-            // if (Input.GetMouseButton(0) &&
-            //     _attackTimer >= attackCooldown && _playerMovement.CanAttack() && projectileIndex != -1)
-            // {
-            //     Attack();
-            //     _attackTimer = 0;
-            // }
-            // else
-            //     _attackTimer += Time.deltaTime;
         }
 
         private bool CanAttack()

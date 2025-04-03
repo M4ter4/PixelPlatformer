@@ -20,6 +20,18 @@ namespace UI
             }
         }
 
+        public void UpdateOptions(GameObject objectHelder)
+        {
+            _components = objectHelder.GetComponentsInChildren<Button>();
+            options = new RectTransform[_components.Length];
+            for (int i = 0; i < _components.Length; i++)
+            {
+                options[i] = _components[i].gameObject.GetComponent<RectTransform>();
+            }
+            _currentOption = 0;
+            ChangePosition(0);
+        }
+
         private void Update()
         {
             if(Input.GetKeyDown(KeyCode.W))
